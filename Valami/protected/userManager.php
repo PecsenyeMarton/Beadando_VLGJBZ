@@ -10,7 +10,7 @@ function UserLogout() {
 }
 
 function UserLogin($email, $password) {
-	$query = "SELECT id, first_name, last_name, email, permission FROM users WHERE email = :email AND password = :password";
+	$query = "SELECT id, first_name, last_name, email, permission,nickname FROM users WHERE email = :email AND password = :password";
 	$params = [
 		':email' => $email,
 		':password' => sha1($password)
@@ -24,24 +24,26 @@ function UserLogin($email, $password) {
 		$_SESSION['lname'] = $record['last_name'];
 		$_SESSION['email'] = $record['email'];
 		$_SESSION['permission'] = $record['permission'];
-		header('Location: index.php');
+		$_SESSION['nickname'] = $record['nickname'];
+ 		header('Location: index.php');
 	}
 	return false;
 }
 
-function UserRegister($email, $password, $fname, $lname) {
+function UserRegister($email, $password, $fname, $lname, $nickname) {
 	$query = "SELECT id FROM users email = :email";
 	$params = [ ':email' => $email ];
 
 	require_once DATABASE_CONTROLLER;
 	$record = getRecord($query, $params);
 	if(empty($record)) {
-		$query = "INSERT INTO users (first_name, last_name, email, password) VALUES (:first_name, :last_name, :email, :password)";
+		$query = "INSERT INTO users (first_name, last_name, email, password, nickname) VALUES (:first_name, :last_name, :email, :password, :nickname)";
 		$params = [
 			':first_name' => $fname,
 			':last_name' => $lname,
 			':email' => $email,
-			':password' => sha1($password)
+			':password' => sha1($password),
+			':nickname' => $nickname
 		];
 
 		if(executeDML($query, $params)) 

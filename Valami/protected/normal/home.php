@@ -1,1 +1,1 @@
-<center><h4>Forum oldal</h4></center>
+<center><h4></h4></center>

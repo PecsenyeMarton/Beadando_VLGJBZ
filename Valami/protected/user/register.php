@@ -6,10 +6,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
 		'email' => $_POST['email'],
 		'email1' => $_POST['email1'],
 		'password' => $_POST['password'],
-		'password1' => $_POST['password1']
+		'password1' => $_POST['password1'],
+		'nickname' => $_POST['nickname']
 	];
 
-	if(empty($postData['fname']) || empty($postData['lname']) || empty($postData['email']) || empty($postData['email1']) || empty($postData['password']) || empty($postData['password1'])) {
+	if(empty($postData['fname']) || empty($postData['lname']) || empty($postData['email']) || empty($postData['email1']) || empty($postData['password']) || empty($postData['password1']) || empty($postData['nickname'])) {
 		echo "Hiányzó adat(ok)!";
 	} else if($postData['email'] != $postData['email1']) {
 		echo "Az email címek nem egyeznek!";
@@ -19,7 +20,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
 		echo "A jelszavak nem egyeznek!";
 	} else if(strlen($postData['password']) < 6) {
 		echo "A jelszó túl rövid! Legalább 6 karakter hosszúnak kell lennie!";
-	} else if(!UserRegister($postData['email'], $postData['password'], $postData['fname'], $postData['lname'])) {
+	} else if(!UserRegister($postData['email'], $postData['password'], $postData['fname'], $postData['lname'], $postData['nickname'])) {
 		echo "Sikertelen regisztráció!";
 	}
 
@@ -29,13 +30,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
 
 <form method="post">
 	<div class="form-row">
-		<div class="form-group col-md-6">
-			<label for="registerFirstName">First Name</label>
+		<div class="form-group col-md-4">
+			<center><label for="registerFirstName">Keresztnév</label></center>
 			<input type="text" class="form-control" id="registerFirstName" name="first_name" value="<?=isset($postData) ? $postData['fname'] : "";?>">
 		</div>
-		<div class="form-group col-md-6">
-			<label for="registerLastName">Last Name</label>
+		<div class="form-group col-md-4">
+			<center><label for="registerLastName">Vezetéknév</label></center>
 			<input type="text" class="form-control" id="registerLastName" name="last_name" value="<?=isset($postData) ? $postData['lname'] : "";?>">
+		</div>
+		<div class="form-group col-md-4">
+			<center><label for="registerNickName">Felhasználó név</label></center>
+			<input type="text" class="form-control" id="registerNickName" name="nick_name" value="<?=isset($postData) ? $postData['nickname'] : "";?>">
 		</div>
 	</div>
 
@@ -45,21 +50,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
 			<input type="email" class="form-control" id="registerEmail" name="email" value="<?=isset($postData) ? $postData['email'] : "";?>">
 		</div>
 		<div class="form-group col-md-6">
-			<label for="registerEmail1">Confirm Email</label>
+			<label for="registerEmail1">Email megerősítése</label>
 			<input type="email" class="form-control" id="registerEmail1" name="email1" value="<?=isset($postData) ? $postData['email1'] : "";?>">
 		</div>
 	</div>
 
 	<div class="form-row">
 		<div class="form-group col-md-6">
-			<label for="registerPassword">Password</label>
+			<label for="registerPassword">Jelszó</label>
 			<input type="password" class="form-control" id="registerPassword" name="password" value="">
 		</div>
 		<div class="form-group col-md-6">
-			<label for="registerPassword1">Confirm Password</label>
+			<label for="registerPassword1">Jelszó megerősítése</label>
 			<input type="password" class="form-control" id="registerPassword1" name="password1" value="">
 		</div>
 	</div>
 
-	<button type="submit" class="btn btn-primary" name="register">Register</button>
+	<button type="submit" class="btn btn-primary" name="register">Regisztráció</button>
 </form>

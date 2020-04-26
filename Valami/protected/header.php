@@ -1,1 +1,1 @@
-<center><h3>Forum</h3></center>
+<center><h3></h3></center>
