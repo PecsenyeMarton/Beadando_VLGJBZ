@@ -9,14 +9,14 @@
 	<?php if(count($users) <= 0) : ?>
 		<h1>No users found in the database.</h1>
 	<?php else : ?>
-		<table class="table table-striped">
+		<table class="table table-dark">
 			<thead>
 				<tr>
 					<th scope="col">#</th>
-					<th scope="col">First Name</th>
-					<th scope="col">Last Name</th>
+					<th scope="col">Keresztnév</th>
+					<th scope="col">Vezetéknév</th>
 					<th scope="col">Email</th>
-					<th scope="col">Permission</th>
+					<th scope="col">Jogosultság</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -28,7 +28,7 @@
 						<td><?=$u['first_name'] ?></td>
 						<td><?=$u['last_name'] ?></td>
 						<td><?=$u['email'] ?></td>
-						<td><?=$u['permission'] ?></td>
+						<td><?=$u['permission'] == 0 ? 'Felhasználó' : ($u['permission'] == 1 ? 'Admin/Rendszergazda' : 'Senki') ?></td>
 					</tr>
 				<?php endforeach;?>
 			</tbody>

@@ -10,15 +10,15 @@
 	<?php if(count($workers) <= 0) : ?>
 		<h1>No wokers found in the database</h1>
 	<?php else : ?>
-		<table class="table table-striped">
+		<table class="table table-dark">
 			<thead>
 				<tr>
 					<th scope="col">#</th>
-					<th scope="col">First Name</th>
-					<th scope="col">Last Name</th>
+					<th scope="col">Keresztnév</th>
+					<th scope="col">Vezetéknév</th>
 					<th scope="col">Email</th>
-					<th scope="col">Gender</th>
-					<th scope="col">Nationality</th>
+					<th scope="col">Nem</th>
+					<th scope="col">Nemzetiség</th>
 					<th scope="col">Szerkesztés</th>
 					<th scope="col">Törlés</th>
 				</tr>
@@ -32,10 +32,10 @@
 						<td><?=$w['first_name'] ?></td>
 						<td><?=$w['last_name'] ?></td>
 						<td><?=$w['email'] ?></td>
-						<td><?=$w['gender'] == 0 ? 'Female' : ($w['gender'] == 1 ? 'Male' : 'Other') ?></td>
+						<td><?=$w['gender'] == 0 ? 'Nő' : ($w['gender'] == 1 ? 'Férfi' : 'Egyéb') ?></td>
 						<td><?=$w['nationality'] ?></td>
-						<td><a href="#">Edit</a></td>
-						<td><a href="index.php?P=del_worker" onclick="return confirm('Tényleg törölni akarod?');">Delete</a></td>
+						<td><a href="" class="btn btn-light">Szerkesztés</a></td>
+						<td><a href="index.php?P=del_worker" onclick="return confirm('Tényleg törölni akarod?');" class="btn btn-light">Törlés</a></td>
 					</tr>
 				<?php endforeach;?>
 			</tbody>

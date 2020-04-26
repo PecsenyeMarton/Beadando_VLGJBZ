@@ -1,1 +1,1 @@
-HOME
+<center><h4>Forum oldal</h4></center>

@@ -36,11 +36,11 @@
 	<form method="post">
 		<div class="form-row">
 			<div class="form-group col-md-6">
-				<label for="workerFirstName">First Name</label>
+				<label for="workerFirstName">Vezetéknév</label>
 				<input type="text" class="form-control" id="workerFirstName" name="first_name">
 			</div>
 			<div class="form-group col-md-6">
-				<label for="workerLastName">Last Name</label>
+				<label for="workerLastName">Keresztnév</label>
 				<input type="text" class="form-control" id="workerLastName" name="last_name">
 			</div>
 		</div>
@@ -53,22 +53,22 @@
 		</div>
 		<div class="form-row">
 			<div class="form-group col-md-12">
-		    	<label for="workerGender">Gender</label>
+		    	<label for="workerGender">Nem</label>
 		    	<select class="form-control" id="workerGender" name="gender">
-		      		<option value="0">Female</option>
-		      		<option value="1">Male</option>
-		      		<option value="2">Other</option>
+		      		<option value="0">Nő</option>
+		      		<option value="1">Férfi</option>
+		      		<option value="2">Egyéb</option>
 		    	</select>
 		  	</div>
 		</div>
 
 		<div class="form-row">
 			<div class="form-group col-md-12">
-				<label for="workerNationality">Nationality</label>
+				<label for="workerNationality">Nemzetiséged</label>
 				<input type="text" class="form-control" id="workerNationality" name="nationality">
 			</div>
 		</div>
 
-		<button type="submit" class="btn btn-primary" name="addWorker">Add Worker</button>
+		<button type="submit" class="btn btn-primary" name="addWorker">Munkás <br/>hozzáadás</button>
 	</form>
 <?php endif; ?>
