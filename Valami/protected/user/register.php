@@ -7,10 +7,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
 		'email1' => $_POST['email1'],
 		'password' => $_POST['password'],
 		'password1' => $_POST['password1'],
-		'nickname' => $_POST['nickname']
+		'niname' => $_POST['nickname'],
 	];
 
-	if(empty($postData['fname']) || empty($postData['lname']) || empty($postData['email']) || empty($postData['email1']) || empty($postData['password']) || empty($postData['password1']) || empty($postData['nickname'])) {
+	if(empty($postData['fname']) || empty($postData['lname']) || empty($postData['email']) || empty($postData['email1']) || empty($postData['password']) || empty($postData['password1']) || empty($postData['niname'])) {
 		echo "Hiányzó adat(ok)!";
 	} else if($postData['email'] != $postData['email1']) {
 		echo "Az email címek nem egyeznek!";
@@ -20,7 +20,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
 		echo "A jelszavak nem egyeznek!";
 	} else if(strlen($postData['password']) < 6) {
 		echo "A jelszó túl rövid! Legalább 6 karakter hosszúnak kell lennie!";
-	} else if(!UserRegister($postData['email'], $postData['password'], $postData['fname'], $postData['lname'], $postData['nickname'])) {
+	} else if(!UserRegister($postData['email'], $postData['password'], $postData['fname'], $postData['lname'], $postData['niname'])) {
 		echo "Sikertelen regisztráció!";
 	}
 
@@ -40,7 +40,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
 		</div>
 		<div class="form-group col-md-4">
 			<center><label for="registerNickName">Felhasználó név</label></center>
-			<input type="text" class="form-control" id="registerNickName" name="nick_name" value="<?=isset($postData) ? $postData['nickname'] : "";?>">
+			<input type="text" class="form-control" id="registerNickName" name="nickname" value="<?=isset($postData) ? $postData['niname'] : "";?>">
 		</div>
 	</div>
 

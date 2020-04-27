@@ -36,11 +36,11 @@
 	<form method="post">
 		<div class="form-row">
 			<div class="form-group col-md-6">
-				<label for="workerFirstName">Vezetéknév</label>
+				<label for="workerFirstName">Keresztnév</label>
 				<input type="text" class="form-control" id="workerFirstName" name="first_name">
 			</div>
 			<div class="form-group col-md-6">
-				<label for="workerLastName">Keresztnév</label>
+				<label for="workerLastName">Vezetéknév</label>
 				<input type="text" class="form-control" id="workerLastName" name="last_name">
 			</div>
 		</div>
@@ -69,6 +69,6 @@
 			</div>
 		</div>
 
-		<button type="submit" class="btn btn-primary" name="addWorker">Munkás <br/>hozzáadás</button>
+		<button type="submit" class="btn btn-primary" name="addWorker"> Hozzáadás</button>
 	</form>
 <?php endif; ?>

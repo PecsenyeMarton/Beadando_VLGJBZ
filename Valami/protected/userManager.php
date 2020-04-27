@@ -10,7 +10,7 @@ function UserLogout() {
 }
 
 function UserLogin($email, $password) {
-	$query = "SELECT id, first_name, last_name, email, permission,nickname FROM users WHERE email = :email AND password = :password";
+	$query = "SELECT id, first_name, last_name, email, permission, nickname FROM users WHERE email = :email AND password = :password";
 	$params = [
 		':email' => $email,
 		':password' => sha1($password)

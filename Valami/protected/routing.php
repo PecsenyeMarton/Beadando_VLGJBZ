@@ -1,4 +1,4 @@
-<<?php 
+<?php 
 if(!array_key_exists('P', $_GET) || empty($_GET['P']))
 	$_GET['P'] = 'home';
 
@@ -6,8 +6,15 @@ switch ($_GET['P']) {
 	case 'home': require_once PROTECTED_DIR.'normal/home.php'; break;
 	case 'test': require_once PROTECTED_DIR.'normal/permission_test.php'; break;
 
+	case 'user': require_once PROTECTED_DIR.'user/profile.php'; break;
+
+	case 'worker': require_once PROTECTED_DIR.'worker/profile.php'; break;
+
+	case 'own_profile': require_once PROTECTED_DIR.'normal/own_profile.php'; break;
 
 	case 'add_worker': IsUserLoggedIn() ? require_once PROTECTED_DIR.'worker/add.php' : header('Location: index.php'); break;
+
+	case 'edit_worker': IsUserLoggedIn() ? require_once PROTECTED_DIR.'worker/edit.php' : header('Location: index.php'); break;
 
 	case 'list_worker': IsUserLoggedIn() ? require_once PROTECTED_DIR.'worker/list.php' : header('Location: index.php'); break;
 

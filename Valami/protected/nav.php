@@ -19,6 +19,8 @@
 		<span> &nbsp; || &nbsp; </span>
 	<?php else : ?>
 		<span> &nbsp; | &nbsp; </span>
+		<a href="index.php?P=own_profile" class="badge badge-primary">Saját Profil</a>
+		<span> &nbsp; | &nbsp; </span>
 	<?php endif; ?>
 	<a href="index.php?P=logout" class="badge badge-light">Kijelentkezés</a>
 <?php endif; ?>

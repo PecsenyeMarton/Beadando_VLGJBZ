@@ -2,7 +2,7 @@
 	<h1>Page access is forbidden!</h1>
 <?php else : ?>
 	<?php 
-	$query = "SELECT first_name, last_name, email, permission,nickname FROM users";
+	$query = "SELECT id,first_name, last_name, email, permission,nickname FROM users";
 	require_once DATABASE_CONTROLLER;
 	$users = getList($query);
 	?>
@@ -26,7 +26,7 @@
 					<?php $i++; ?>
 					<tr>
 						<th scope="row"><?=$i ?></th>
-						<td><?=$u['first_name'] ?></td>
+						<td><a href="?P=user&u=<?=$u['id'] ?>"><?=$u['first_name'] ?></a></td>
 						<td><?=$u['last_name'] ?></td>
 						<td><?=$u['email'] ?></td>
 						<td><?=$u['permission'] == 0 ? 'Felhasználó' : ($u['permission'] == 1 ? 'Admin/Rendszergazda' : 'Senki') ?></td>
