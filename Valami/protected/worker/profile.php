@@ -9,9 +9,9 @@ else:
 	if(empty($worker)) :
 		header('Location: index.php');
 	else : ?>
-		<center><h4>Keresztnév: <?=$worker['first_name'].' <br/> Vezetéknév: '.$worker['last_name'] ?></h4>
-		<p>Email: <?=$worker['email'] ?></p>
-		<p>Nem: <?=$worker['gender'] ?> <br>
+		<center><h4>Vezetéknév: <?=$worker['last_name'].' &nbsp;  Keresztnév: '.$worker['first_name'] ?></h4>
+		<p>Email: <?=$worker['email'] ?> <br/>
+		Nem: <?=$worker['gender'] == 0 ? 'Nő' : ($worker['gender'] == 1 ? 'Férfi' : 'Egyéb') ?> <br/>
 		Nemzetiség: <?=$worker['nationality'] ?></p>
 		</center>
 	<?php endif;

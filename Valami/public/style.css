@@ -2,7 +2,32 @@ body {
 	background-image: linear-gradient(to left, rgba(143, 162, 177, 0.6), rgba(0, 0, 244, 0.6));
 }
 
-nav > a
-{
-	text-align:center;
+.navbar {
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: #333;
+  position: center;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.main {
+  padding: 10px;
+  margin-top: 20px;
+  height: 1000px; 
 }

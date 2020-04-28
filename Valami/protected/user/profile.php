@@ -9,10 +9,10 @@ else:
 	if(empty($users)) :
 		header('Location: index.php');
 	else : ?>
-		<center><h4>Keresztnév: <?=$users['first_name'].' <br/> Vezetéknév: '.$users['last_name'] ?></h4>
-		<p>Email: <?=$users['email'] ?></p>
-		<p>Jogosultság: <?=$users['permission'] ?> <br>
-		Felhasználó név: <?=$users['nickname'] ?></p>
+		<center><h4>Vezetéknév: <?=$users['last_name'].' &nbsp;  Keresztnév: '.$users['first_name'] ?></h4>
+		<p>Email: <?=$users['email'] ?> <br/>
+		Jogosultság: <?=$users['permission'] ?> </p>
+		<h5>Felhasználó név: <?=$users['nickname'] ?> </h5>
 		</center>
 	<?php endif;
 endif;
