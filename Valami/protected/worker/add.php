@@ -9,21 +9,24 @@
 			'last_name' => $_POST['last_name'],
 			'email' => $_POST['email'],
 			'gender' => $_POST['gender'],
-			'nationality' => $_POST['nationality']
+			'nationality' => $_POST['nationality'],
+			'tipus' => $_POST['tipus']
 		];
 
-		if(empty($postData['first_name']) || empty($postData['last_name']) || empty($postData['email']) || empty($postData['nationality']) || $postData['gender'] < 0 && $postData['gender'] > 2) {
+		if(empty($postData['first_name']) || empty($postData['last_name']) || empty($postData['email']) || empty($postData['nationality']) || empty($postData['tipus']) || $postData['gender'] < 0 && $postData['gender'] > 2) {
 			echo "Hiányzó adat(ok)!";
 		} else if(!filter_var($postData['email'], FILTER_VALIDATE_EMAIL)) {
 			echo "Hibás email formátum!";
 		} else {
-			$query = "INSERT INTO workers (first_name, last_name, email, gender, nationality) VALUES (:first_name, :last_name, :email, :gender, :nationality)";
+			$query = "INSERT INTO workers (first_name, last_name, email, gender, tipus, nationality ) VALUES (:first_name, :last_name, :email, :gender, :tipus, :nationality)";
 			$params = [
 				':first_name' => $postData['first_name'],
 				':last_name' => $postData['last_name'],
 				':email' => $postData['email'],
 				':gender' => $postData['gender'],
-				':nationality' => $postData['nationality']
+				':nationality' => $postData['nationality'],
+				':tipus' => $postData['tipus']
+
 			];
 			require_once DATABASE_CONTROLLER;
 			if(!executeDML($query, $params)) {
@@ -68,7 +71,13 @@
 				<input type="text" class="form-control" id="workerNationality" name="nationality">
 			</div>
 		</div>
+		<div class="form-row">
+			<div class="form-group col-md-12">
+				<label for="worker">Beosztása</label>
+				<input type="text" class="form-control" id="workerBeosztas" name="tipus">
+			</div>
+		</div>
 
-		<button type="submit" class="btn btn-primary" name="addWorker"> Hozzáadás</button>
+		<button type="submit" class="btn btn-primary" name="addWorker" onclick="return confirm('Tényleg hozzá akarod adni?');"> Hozzáadás</button>
 	</form>
 <?php endif; ?>

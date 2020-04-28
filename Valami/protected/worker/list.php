@@ -12,7 +12,7 @@
 		}
 	?>
 <?php 
-	$query = "SELECT id, first_name, last_name, email, gender, nationality FROM workers ORDER BY first_name ASC";
+	$query = "SELECT id, first_name, last_name, email, gender, tipus, nationality FROM workers";
 	require_once DATABASE_CONTROLLER;
 	$workers = getList($query);
 ?>
@@ -28,6 +28,7 @@
 					<th scope="col">Email</th>
 					<th scope="col">Nem</th>
 					<th scope="col">Nemzetiség</th>
+					<th scope="col">Beosztás</th>
 					<th scope="col">Szerkesztés</th>
 					<th scope="col">Törlés</th>
 				</tr>
@@ -43,6 +44,7 @@
 						<td><?=$w['email'] ?></td>
 						<td><?=$w['gender'] == 0 ? 'Nő' : ($w['gender'] == 1 ? 'Férfi' : 'Egyéb') ?></td>
 						<td><?=$w['nationality'] ?></td>
+						<td><?=$w['tipus'] ?></td>
 						<td><a href="?P=edit_worker&w=<?=$w['id'] ?>" class="btn btn-light">Szerkesztés</a></td>
 						<td><a href="?P=list_worker&d=<?=$w['id'] ?>" onclick="return confirm('Tényleg törölni akarod?');" class="btn btn-light">Törlés</a></td>
 					</tr>

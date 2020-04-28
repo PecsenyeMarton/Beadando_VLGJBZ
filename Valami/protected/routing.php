@@ -6,6 +6,8 @@ switch ($_GET['P']) {
 	case 'home': require_once PROTECTED_DIR.'normal/home.php'; break;
 	case 'test': require_once PROTECTED_DIR.'normal/permission_test.php'; break;
 
+	case 'forum_list': require_once PROTECTED_DIR.'felulet/theme_list.php'; break;
+
 	case 'user': require_once PROTECTED_DIR.'user/profile.php'; break;
 
 	case 'worker': require_once PROTECTED_DIR.'worker/profile.php'; break;

@@ -11,24 +11,29 @@ else:
 			'last_name' => $_POST['last_name'],
 			'email' => $_POST['email'],
 			'gender' => $_POST['gender'],
+			'tipus' => $_POST['tipus'],
 			'nationality' => $_POST['nationality']
+			
+
 		];
 		if($postData['id'] != $_GET['w']) {
 			echo "Hiba a dolgozó azonosítása során!";
 		} else {
-			if(empty($postData['first_name']) || empty($postData['last_name']) || empty($postData['email']) || empty($postData['nationality']) || $postData['gender'] < 0 && $postData['gender'] > 2) {
+			if(empty($postData['first_name']) || empty($postData['last_name']) || empty($postData['email']) || empty($postData['nationality']) || empty($postData['tipus']) || $postData['gender'] < 0 && $postData['gender'] > 2) {
 				echo "Hiányzó adat(ok)!";
 			} else if(!filter_var($postData['email'], FILTER_VALIDATE_EMAIL)) {
 				echo "Hibás email formátum!";
 			} else {
-				$query = "UPDATE workers SET first_name = :first_name, last_name = :last_name, email = :email, gender = :gender, nationality = :nationality WHERE id = :id";
+				$query = "UPDATE workers SET first_name = :first_name, last_name = :last_name, email = :email, gender = :gender, tipus=:tipus, nationality = :nationality  WHERE id = :id";
 				$params = [
 					':first_name' => $postData['first_name'],
 					':last_name' => $postData['last_name'],
 					':email' => $postData['email'],
 					':gender' => $postData['gender'],
 					':nationality' => $postData['nationality'],
-					':id' => $postData['id']
+					':id' => $postData['id'],
+					':tipus' => $postData['tipus']
+
 				];
 				require_once DATABASE_CONTROLLER;
 				if(!executeDML($query, $params)) {
@@ -37,7 +42,7 @@ else:
 			}
 		}
 	}
-	$query = "SELECT id, first_name, last_name, email, gender, nationality FROM workers WHERE id = :id";
+	$query = "SELECT id, first_name, last_name, email, gender, tipus, nationality FROM workers WHERE id = :id";
 	$params = [':id' => $_GET['w']];
 	require_once DATABASE_CONTROLLER;
 	$worker = getRecord($query, $params);
@@ -81,7 +86,14 @@ else:
 					</div>
 				</div>
 
-				<button type="submit" class="btn btn-primary" name="editWorker">Mentés</button>
+				<div class="form-row">
+					<div class="form-group col-md-12">
+						<label for="worker">Beosztása</label>
+						<input type="text" class="form-control" id="workerBeosztas" name="tipus" value="<?=$worker['tipus'] ?>">
+					</div>
+				</div>
+
+				<button type="submit" class="btn btn-primary" name="editWorker" onclick="return confirm('Tényleg módosítani akarod?');">Mentés</button>
 			</form>
 		<?php endif;
 	endif;
