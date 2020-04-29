@@ -17,7 +17,7 @@
 					<th scope="col">Vezetéknév</th>
 					<th scope="col">Email</th>
 					<th scope="col">Jogosultság</th>
-					<th scope="col">Felhasznnáló név</th>
+					<th scope="col">Felhasznnálónév</th>
 				</tr>
 			</thead>
 			<tbody>

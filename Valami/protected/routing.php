@@ -5,14 +5,18 @@ if(!array_key_exists('P', $_GET) || empty($_GET['P']))
 switch ($_GET['P']) {
 	case 'home': require_once PROTECTED_DIR.'normal/home.php'; break;
 	case 'test': require_once PROTECTED_DIR.'normal/permission_test.php'; break;
+	
+	case 'edit_theme': require_once PROTECTED_DIR.'felulet/edit_theme.php'; break;
 
-	case 'forum_list': require_once PROTECTED_DIR.'felulet/theme_list.php'; break;
+	case 'add_theme': require_once PROTECTED_DIR.'felulet/add_theme.php'; break;
+
+	case 'flist': require_once PROTECTED_DIR.'felulet/theme_list.php'; break;
+
+	case 'forum_theme': require_once PROTECTED_DIR.'felulet/forum_theme.php'; break;
 
 	case 'user': require_once PROTECTED_DIR.'user/profile.php'; break;
 
 	case 'worker': require_once PROTECTED_DIR.'worker/profile.php'; break;
-
-	case 'own_profile': require_once PROTECTED_DIR.'normal/own_profile.php'; break;
 
 	case 'add_worker': IsUserLoggedIn() ? require_once PROTECTED_DIR.'worker/add.php' : header('Location: index.php'); break;
 

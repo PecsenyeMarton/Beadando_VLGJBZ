@@ -45,8 +45,8 @@
 						<td><?=$w['gender'] == 0 ? 'Nő' : ($w['gender'] == 1 ? 'Férfi' : 'Egyéb') ?></td>
 						<td><?=$w['nationality'] ?></td>
 						<td><?=$w['tipus'] ?></td>
-						<td><a href="?P=edit_worker&w=<?=$w['id'] ?>" class="btn btn-light">Szerkesztés</a></td>
-						<td><a href="?P=list_worker&d=<?=$w['id'] ?>" onclick="return confirm('Tényleg törölni akarod?');" class="btn btn-light">Törlés</a></td>
+						<td><a href="?P=edit_worker&w=<?=$w['id'] ?>" class="btn btn-secondary">Szerkesztés</a></td>
+						<td><a href="?P=list_worker&d=<?=$w['id'] ?>" onclick="return confirm('Tényleg törölni akarod?');" class="btn btn-danger">Törlés</a></td>
 					</tr>
 				<?php endforeach;?>
 			</tbody>

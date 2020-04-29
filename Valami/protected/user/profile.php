@@ -12,7 +12,7 @@ else:
 		<center><h4>Vezetéknév: <?=$users['last_name'].' &nbsp;  Keresztnév: '.$users['first_name'] ?></h4>
 		<p>Email: <?=$users['email'] ?> <br/>
 		Jogosultság: <?=$users['permission'] ?> </p>
-		<h5>Felhasználó név: <?=$users['nickname'] ?> </h5>
+		<h5>Felhasználónév: <?=$users['nickname'] ?> </h5>
 		</center>
 	<?php endif;
 endif;

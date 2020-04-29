@@ -39,7 +39,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
 			<input type="text" class="form-control" id="registerLastName" name="last_name" value="<?=isset($postData) ? $postData['lname'] : "";?>">
 		</div>
 		<div class="form-group col-md-4">
-			<center><label for="registerNickName">Felhasználó név</label></center>
+			<center><label for="registerNickName">Felhasználónév</label></center>
 			<input type="text" class="form-control" id="registerNickName" name="nickname" value="<?=isset($postData) ? $postData['niname'] : "";?>">
 		</div>
 	</div>

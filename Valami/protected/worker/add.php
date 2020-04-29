@@ -31,7 +31,7 @@
 			require_once DATABASE_CONTROLLER;
 			if(!executeDML($query, $params)) {
 				echo "Hiba az adatbevitel során!";
-			} header('Location: index.php');
+			} header('Location: ?P=list_worker');
 		}
 	}
 	?>
