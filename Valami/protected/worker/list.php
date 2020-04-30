@@ -12,7 +12,7 @@
 		}
 	?>
 <?php 
-	$query = "SELECT id, first_name, last_name, email, gender, tipus, nationality FROM workers";
+	$query = "SELECT id, first_name, last_name, email, gender, tipus, nationality FROM workers ORDER BY first_name ASC";
 	require_once DATABASE_CONTROLLER;
 	$workers = getList($query);
 ?>
@@ -23,14 +23,15 @@
 			<thead>
 				<tr>
 					<th scope="col">#</th>
-					<th scope="col">Keresztnév</th>
 					<th scope="col">Vezetéknév</th>
+					<th scope="col">Keresztnév</th>
 					<th scope="col">Email</th>
 					<th scope="col">Nem</th>
 					<th scope="col">Nemzetiség</th>
 					<th scope="col">Beosztás</th>
 					<th scope="col">Szerkesztés</th>
 					<th scope="col">Törlés</th>
+					<th scope="col">SQL ID</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -39,14 +40,15 @@
 					<?php $i++; ?>
 					<tr>
 						<th scope="row"><?=$i ?></th>
-						<td><a href="?P=worker&w=<?=$w['id'] ?>"><?=$w['first_name'] ?></a></td>
-						<td><?=$w['last_name'] ?></td>
+						<td><a href="?P=worker&w=<?=$w['id'] ?>"><?=$w['last_name'] ?></a></td>
+						<td><?=$w['first_name'] ?></td>
 						<td><?=$w['email'] ?></td>
 						<td><?=$w['gender'] == 0 ? 'Nő' : ($w['gender'] == 1 ? 'Férfi' : 'Egyéb') ?></td>
 						<td><?=$w['nationality'] ?></td>
 						<td><?=$w['tipus'] ?></td>
 						<td><a href="?P=edit_worker&w=<?=$w['id'] ?>" class="btn btn-secondary">Szerkesztés</a></td>
 						<td><a href="?P=list_worker&d=<?=$w['id'] ?>" onclick="return confirm('Tényleg törölni akarod?');" class="btn btn-danger">Törlés</a></td>
+						<td><?=$w['id'] ?></td>
 					</tr>
 				<?php endforeach;?>
 			</tbody>

@@ -54,7 +54,7 @@ $query = "SELECT id, nickname, theme, comment  FROM forum WHERE id = :id";
              <textarea class="form-control" id="editForumcomment"  rows="4" name="comment"> <?=$forum['comment'] ?> </textarea>
        </div>
 
-    <button type="submit" class="btn btn-primary" name="edit_theme" onclick="return confirm('Tényleg hozzá akarod adni?');"> Téma Módosítása</button>
+    <button type="submit" class="btn btn-primary" name="edit_theme" onclick="return confirm('Tényleg módosítani akarod adni?');"> Módosítás</button>
       </form> 
     <?php endif;
   endif;

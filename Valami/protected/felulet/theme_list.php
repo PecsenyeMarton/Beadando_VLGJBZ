@@ -1,6 +1,6 @@
 <?php if(!isset($_SESSION['permission']) || $_SESSION['permission'] < 1) : ?>
 	<?php 
-	$query = "SELECT id,nickname,theme FROM forum";
+	$query = "SELECT id,nickname,theme FROM forum ORDER BY theme asc";
 	require DATABASE_CONTROLLER;
 	$forum = getList($query);
 ?>
@@ -41,7 +41,7 @@
 		}
 	?>
 	<?php 
-	$query = "SELECT id,nickname,theme FROM forum";
+	$query = "SELECT id,nickname,theme FROM forum ORDER BY theme asc";
 	require DATABASE_CONTROLLER;
 	$forum = getList($query);
 	?>
@@ -56,6 +56,7 @@
 					<th scope="col">Téma</th>
 					<th scope="col">Szerkesztés</th>
 					<th scope="col">Törlés</th>
+					<th scope="col">SQL ID</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -68,6 +69,7 @@
 						<td><a href="?P=forum_theme&f=<?=$f['id'] ?>"><?=$f['theme'] ?></td>
 						<td><a href="?P=edit_theme&f=<?=$f['id'] ?>" class="btn btn-secondary">Szerkesztés</a></td>
 						<td><a href="?P=flist&c=<?=$f['id'] ?>" onclick="return confirm('Tényleg törölni akarod?');" class="btn btn-danger">Törlés</a></td>
+						<td><?=$f['id'] ?></td>
 					</tr>
 				<?php endforeach;?>
 			</tbody>

@@ -37,6 +37,6 @@
    	<textarea class="form-control" id="addForumcomment"  rows="4" name="comment" ></textarea>
   </div>
 
-    <button type="submit" class="btn btn-primary" name="add_theme" onclick="return confirm('Tényleg hozzá akarod adni?');"> Téma Létrehozása</button>
+    <button type="submit" class="btn btn-primary" name="add_theme" onclick="return confirm('Tényleg létre akarod adni?');">Létrehozás</button>
 
 </form>	

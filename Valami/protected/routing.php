@@ -5,7 +5,9 @@ if(!array_key_exists('P', $_GET) || empty($_GET['P']))
 switch ($_GET['P']) {
 	case 'home': require_once PROTECTED_DIR.'normal/home.php'; break;
 	case 'test': require_once PROTECTED_DIR.'normal/permission_test.php'; break;
-	
+
+	case 'search': require_once PROTECTED_DIR.'felulet/search.php'; break;
+
 	case 'edit_theme': require_once PROTECTED_DIR.'felulet/edit_theme.php'; break;
 
 	case 'add_theme': require_once PROTECTED_DIR.'felulet/add_theme.php'; break;

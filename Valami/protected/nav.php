@@ -17,23 +17,18 @@
 		<a href="index.php?P=flist">Témák</a>
 		<a href="index.php?P=add_worker">Munkás hozzáadás</a>
 		<a href="index.php?P=add_theme">Téma hozzáadása</a>
+		<a href="index.php?P=search">Keresés</a>
 
 
 	<?php else : ?>
 		<a href="index.php?P=flist">Témák</a>
 		<a href="index.php?P=add_theme">Téma hozzáadása</a>
+		<a href="index.php?P=search">Keresés</a>
 
 
 	<?php endif; ?>
 	<a href="index.php?P=logout" onclick="return confirm('Kijelentkezel?');">Kijelentkezés</a>
 <?php endif; ?>
-
-
-
-<form class="form-inline" >
-    <input class="form-control mr-sm-2" type="search" placeholder="Keresés" aria-label="Search">
-    <button class="btn btn-outline-success my-0 my-sm-0" type="submit">Keresés</button>
-</form>
 
 
 </div>
