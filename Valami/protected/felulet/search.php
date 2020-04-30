@@ -1,7 +1,7 @@
 <?php  
  	if (isset($_POST['search'])) {
  		$search = $_POST['search'];
- 		$query = "SELECT * FROM `forum` WHERE CONCAT(`nickname`, `theme`) LIKE '%".$search."%'";
+ 		$query = "SELECT * FROM forum WHERE CONCAT(nickname, theme) LIKE '%".$search."%'";
  		require_once DATABASE_CONTROLLER;
  		$forum = getList($query);
  	}
@@ -10,7 +10,6 @@
     <input class="form-control mr-sm-2" type="search" name="search" placeholder="Keresés">
     <button class="btn btn-dark" type="submit">Keresés</button>
 </form>
-
 
 	<?php if(count($forum) <= 0) : ?>
 	<?php else : ?>
