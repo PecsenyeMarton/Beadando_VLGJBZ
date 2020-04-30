@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1:3308
--- Létrehozás ideje: 2020. Ápr 29. 14:01
+-- Létrehozás ideje: 2020. Ápr 30. 19:40
 -- Kiszolgáló verziója: 8.0.18
 -- PHP verzió: 7.3.12
 
@@ -35,15 +35,19 @@ CREATE TABLE IF NOT EXISTS `forum` (
   `theme` varchar(64) NOT NULL,
   `comment` varchar(2500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 --
 -- A tábla adatainak kiíratása `forum`
 --
 
 INSERT INTO `forum` (`id`, `nickname`, `theme`, `comment`) VALUES
-(1, 'PecsiMarc', 'Miért ugrálnak az emberek?', ' Az űrbéli esemény jelentősségét az adja, hogy ha a Juno csak kicsit is eltért volna valami a manőver során, az egység menthetetlenül elszállt volna az óriásbolygó mellett, és nem tudta volna teljesíteni egymilliárd dolláros (284 milliárd forintos) misszióját, hogy felmérje a Jupiter mágneses mezejét. Éppen ezért örültek meg a fontos tudományos eseménynek a Google-nél, és egy animációra cserélték le a kereső főoldalán látható logót. aaa'),
-(2, 'PecsiMarc', 'Why are you running?', 'Hasonló fordítások a(z) \"are you running\" szóra magyarul to be ige Hungarian van létezik.');
+(1, 'PecsiMarc', 'Miért ugrálnak az emberek?', 'Az űrbéli esemény jelentőségét az adja, hogy ha a Juno csak kicsit is eltért volna valami a manőver során, az egység menthetetlenül elszállt volna az óriásbolygó mellett, és nem tudta volna teljesíteni egymilliárd dolláros (284 milliárd forintos) misszióját, hogy felmérje a Jupiter mágneses mezejét. Éppen ezért örültek meg a fontos tudományos eseménynek a Google-nél, és egy animációra cserélték le a kereső főoldalán látható logót. aaa '),
+(2, 'PecsiMarc', 'Why are you running?', 'Hasonló fordítások a(z) \"are you running\" szóra magyarul to be ige Hungarian van létezik.'),
+(8, 'PecsiMarc', 'Számítógép-PC fogalma', 'A, személyi számítógép, az angol Personal Computer rövidítése.'),
+(9, 'Sziamia', 'Miért kell napozni?', '  Mert miért ne?!  '),
+(10, 'Csovike', 'Samsung', 'Csak hogy legyen téma.'),
+(11, 'PecsiMarc', 'Theme1', 'Hiba..... Nincs is baj xd.');
 
 -- --------------------------------------------------------
 

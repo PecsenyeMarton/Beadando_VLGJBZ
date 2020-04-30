@@ -6,6 +6,7 @@
  		$forum = getList($query);
  	}
  ?>
+ <br/>
 <form class="form-inline" method="post">
     <input class="form-control mr-sm-2" type="search" name="search" placeholder="Keresés">
     <button class="btn btn-dark" type="submit">Keresés</button>
